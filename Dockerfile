@@ -26,5 +26,7 @@ RUN npm install -g yarn grunt-cli
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod 755 /usr/local/bin/docker-entrypoint.sh
 
+COPY docker-php-ext-config.ini /usr/local/etc/php/conf.d/docker-php-ext-config.ini
+
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "php-fpm" ]
